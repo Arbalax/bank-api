@@ -1,0 +1,49 @@
+GET http://localhost:8081/api/users/1
+Accept: application/json
+
+###
+GET http://localhost:8081/api/users/5/accounts/5952878724/cards
+Accept: application/json
+
+###
+POST http://localhost:8081/api/users/5/accounts/5952878724/cards
+Content-Type: application/json
+
+{"number": "0000000000000000",
+  "expirationMonth": 1,
+  "expirationYear": 23,
+  "cvv": "777",
+  "balance": 0.0,
+  "status": "Unconfirmed"}
+###
+
+GET http://localhost:8081/api/users/5/accounts/5952878724/cards/2390569694764959/balance
+Accept: application/json
+
+###
+
+PUT http://localhost:8081/api/users/5/accounts/5952878724/cards/2390569694764959
+Content-Type: application/json
+
+75.55
+###
+GET http://localhost:8081/api/users/5/accounts/5952878724/cards/2390569694764959/balance
+Accept: application/json
+
+###
+GET http://localhost:8081/api/users/4/counterparties
+Accept: application/json
+
+###
+POST http://localhost:8081/api/users/4/counterparties
+Content-Type: application/json
+
+{"name": "My Silly Company",
+"bankBIK": 777888999,
+"account": "1234567890"}
+
+###
+GET http://localhost:8081/api/users/4/counterparties
+Accept: application/json
+
+###
